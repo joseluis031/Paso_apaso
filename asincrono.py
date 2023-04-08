@@ -4,22 +4,24 @@ from urllib.parse import urlparse
 import sys
 from os import sep
 from sys import stderr
-
+import functools
 from bs4 import BeautifulSoup
 
 from timeit import timeit
 
 
-def get_images_src_from_html(html_doc):    
+async def get_images_src_from_html(html_doc):    
     """Recupera todo el contenido de los atributos src de las etiquetas 
 img"""   
     soup = BeautifulSoup(html_doc, "html.parser")    
-    return (img.get('src') for img in soup.find_all('img')) 
+    for img in soup.find_all('img'):    
+        yield img.get('src')
+        await asyncio.sleep(0.001)
 
-def get_uri_from_images_src(base_uri, images_src):    
+async def get_uri_from_images_src(base_uri, images_src):    
     """Devuelve una a una cada URI de la imagen a descargar"""    
     parsed_base = urlparse(base_uri)    
-    for src in images_src:    
+    async for src in images_src:    
         parsed = urlparse(src)    
         if parsed.netloc == '':    
             path = parsed.path    
@@ -32,4 +34,5 @@ def get_uri_from_images_src(base_uri, images_src):
                     path = '/' + '/'.join(parsed_base.path.split('/')   [:-1]) + '/' + path    
             yield parsed_base.scheme + '://' + parsed_base.netloc + path  
         else:    
-            yield parsed.geturl() 
+            yield parsed.geturl()
+            await asyncio.sleep(0.001) 
