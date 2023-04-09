@@ -104,3 +104,6 @@ if __name__ == '__main__':
     write_in_file('time.txt', str(time))# Guarda el tiempo de ejecucion en un archivo
     asyncio.run(main())        # Ejecuta el programa
 ```
+Con este codigo, conseguimos que, de manera asincrona, descargar todas las
+imagenes de una pagina web y que se guarden en una carpeta, ademas de que se escriba
+en un .txt el tiempo que ha tardado en descargar la imagen
