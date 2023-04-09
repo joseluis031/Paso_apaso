@@ -107,3 +107,18 @@ if __name__ == '__main__':
 Con este codigo, conseguimos que, de manera asincrona, se descarguen todas las
 imagenes de una pagina web y que se guarden en una carpeta, ademas de que se escriba
 en un .txt el tiempo que ha tardado en descargar la imagen
+
+
+## Ejecucion del codigo en asincrono
+
+```
+Descarga de https://viajes.nationalgeographic.com.es//a/image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1254 837"%3E%3C/svg%3E
+Descarga de https://viajes.nationalgeographic.com.es/medio/2022/05/06/istock-611291102_b81f9871_1254x837.jpg
+Descarga de https://viajes.nationalgeographic.com.es//a/image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 869"%3E%3C/svg%3E
+Descarga de https://viajes.nationalgeographic.com.es/medio/2017/07/10/cala-pola-tossa-de-mar_4c9b3ec2.jpg
+Descarga de https://viajes.nationalgeographic.com.es//a/image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 667"%3E%3C/svg%3E
+Descarga de https://viajes.nationalgeographic.com.es/medio/2020/09/15/playa-de-poo-asturias_e5404338_1000x667.jpg
+Descarga de https://viajes.nationalgeographic.com.es//a/image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1254 836"%3E%3C/svg%3E
+Descarga de https://viajes.nationalgeographic.com.es/medio/2022/05/04/castro-de-barona_c1e9ced6_1254x836.jpg
+```
+
