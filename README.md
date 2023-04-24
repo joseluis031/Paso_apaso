@@ -88,7 +88,7 @@ async def download(session, uri):
                 return filename    
         else:    
             return None
-        
+            
 async def main():
     async with aiohttp.ClientSession() as session:    
         await get_images(session, 'https://viajes.nationalgeographic.com.es/a/mejores-playas-espana_11759')
@@ -98,7 +98,12 @@ def write_in_file(filename, content):
     with open(filename, 'w') as f:
         f.write(content)
     
-        
+```
+
+## Codigo main
+
+```
+from asincrono import *       # Importa el modulo asincrono
 if __name__ == '__main__':
     time = timeit(main, number=1)# Tiempo de ejecucion
     write_in_file('time.txt', str(time))# Guarda el tiempo de ejecucion en un archivo
